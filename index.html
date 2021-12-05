@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Express tests</title>
+</head>
+<body>
+	<form action="http://127.0.0.1:8081/process_get" method="GET">
+		<h2>Getting</h2>
+		First Name: <input type="text" name="firstName"> <br>
+		Last Name: <input type="text" name="lastName">
+		<input type="submit" value="Submit">
+	</form>
+	<form action="http://127.0.0.1:8081/process_post" method="POST">
+		<h2>Posting</h2>
+		First Name: <input type="text" name="firstNameP"> <br>
+		Last Name: <input type="text" name="lastNameP">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
