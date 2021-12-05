@@ -1,5 +1,9 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+
+// create aoo/x-www-form-urlencoded parser
+const urlencodedParser = bodyParser.urlencoded({ extended: false})
 
 app.use(express.static('public'))
 
@@ -8,6 +12,18 @@ app.get('/index.html', (req, res) => {
 	res.sendFile(__dirname + "/" + "index.html")
 })
 
+// process post
+app.post('/process_post', urlencodedParser, (req, res) => {
+	// prep output in json
+	response = {
+		firstName:req.body.firstNameP,
+		lastName:req.body.lastNameP
+	}
+	console.log(response)
+	res.end(JSON.stringify(response))
+})
+
+// process get
 app.get('/process_get', (req, res) => {
 	// prep output in JSON
 	response = {
